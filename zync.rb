@@ -11,7 +11,7 @@ class Zync < Formula
   on_macos do
     on_intel do
       url "https://github.com/philrz/zync/releases/download/v0.10.0/zync-v0.10.0.darwin-amd64.tar.gz"
-      sha256 "427cb5f2a18b87dd64e415a854ab34d1c21df34bb4e8b85ee9b86c162b065e94"
+      sha256 "9a9d1589f301d97681273bf8066d9f0b41f03825c118b83ec8115aaa5f3267a3"
 
       def install
         bin.install "zync"
@@ -19,7 +19,7 @@ class Zync < Formula
     end
     on_arm do
       url "https://github.com/philrz/zync/releases/download/v0.10.0/zync-v0.10.0.darwin-arm64.tar.gz"
-      sha256 "aa5019dce8ab38fdb7b377b936f55664177700d4078e8f208b3ebfb5380a769d"
+      sha256 "cf803cd3b4f2dd5a1816e3056fc2517ef78423fee34d48d055293311697d02a1"
 
       def install
         bin.install "zync"
@@ -31,7 +31,7 @@ class Zync < Formula
     on_intel do
       if Hardware::CPU.is_64_bit?
         url "https://github.com/philrz/zync/releases/download/v0.10.0/zync-v0.10.0.linux-amd64.tar.gz"
-        sha256 "8cf6291de52c1e901f1118956747f6c8e027ae18eed991d7cfb2e68da18fd5fe"
+        sha256 "3a436ebcad0cdbad98e815a91684ae216a7537eae80b79afc2db90452c6fabca"
 
         def install
           bin.install "zync"
@@ -41,7 +41,7 @@ class Zync < Formula
     on_arm do
       if Hardware::CPU.is_64_bit?
         url "https://github.com/philrz/zync/releases/download/v0.10.0/zync-v0.10.0.linux-arm64.tar.gz"
-        sha256 "0da21489d74b43b9bba3d887d5a80811a178c7049be9445a7c718ce6e54d837b"
+        sha256 "23e8c8432478c3332002d6ce0c24cb7ad57fb8e8da53df301ee00e06e958f6c5"
 
         def install
           bin.install "zync"
