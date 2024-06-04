@@ -6,20 +6,20 @@ class Zync < Formula
   desc "Kafka connector to sync Zed lakes to and from Kafka topics
 "
   homepage "https://github.com/brimdata/zync"
-  version "1.0.0"
+  version "0.10.0"
 
   on_macos do
     on_intel do
-      url "https://github.com/philrz/zync/releases/download/v1.0.0/zync-v1.0.0.darwin-amd64.tar.gz"
-      sha256 "683e8ff33c8f65cd5cb127f9a5cb902a2fc04a661332432b0b967fcddef17afc"
+      url "https://github.com/philrz/zync/releases/download/v0.10.0/zync-v0.10.0.darwin-amd64.tar.gz"
+      sha256 "d1c684a37df1aadd9845818a9595fce5bed7192dd107383be99726f4d07050aa"
 
       def install
         bin.install "zync"
       end
     end
     on_arm do
-      url "https://github.com/philrz/zync/releases/download/v1.0.0/zync-v1.0.0.darwin-arm64.tar.gz"
-      sha256 "f0d5ad573f3d16d352c2c22b1531cc31a4997f852d7b488b970ad9c7d0c91a1f"
+      url "https://github.com/philrz/zync/releases/download/v0.10.0/zync-v0.10.0.darwin-arm64.tar.gz"
+      sha256 "2a84242b6760c6e69f3ed94de7b4c9ab72eda1f9cdaf0d77a5ac8439929c3f53"
 
       def install
         bin.install "zync"
@@ -30,8 +30,8 @@ class Zync < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/philrz/zync/releases/download/v1.0.0/zync-v1.0.0.linux-amd64.tar.gz"
-        sha256 "a91cfb4d9bd36f894e49074589c6a8cf8e21fbc10e9dedc72f0f3adfec7b5f10"
+        url "https://github.com/philrz/zync/releases/download/v0.10.0/zync-v0.10.0.linux-amd64.tar.gz"
+        sha256 "fedc9f61c20b58e327951f155a47677ba22486b154cac5f47ee92bdbb9b3433f"
 
         def install
           bin.install "zync"
@@ -40,8 +40,8 @@ class Zync < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/philrz/zync/releases/download/v1.0.0/zync-v1.0.0.linux-arm64.tar.gz"
-        sha256 "c9125aa0a6e4f82cd46f2bfeccf08dd566189da1deaa947ee821e73ca7318432"
+        url "https://github.com/philrz/zync/releases/download/v0.10.0/zync-v0.10.0.linux-arm64.tar.gz"
+        sha256 "cc32f011f120334bb9a852eb65fbc6de825caf8ef1fe3047b1178fb0ad070b72"
 
         def install
           bin.install "zync"
