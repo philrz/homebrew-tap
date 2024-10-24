@@ -11,7 +11,7 @@ class Super < Formula
     ENV["GOPATH"] = buildpath
     (buildpath/"build/src").mkpath
     ln_s buildpath, buildpath/"build/src/github.com"
-    system "GOPATH=$PWD/build go install github.com/brimdata/super@727a84d"
+    system "GOPATH=$PWD/build go install github.com/brimdata/super/cmd/super@727a84d"
     bin.install "build/bin/super"
   end
 end
