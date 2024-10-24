@@ -5,7 +5,7 @@ class Super < Formula
   sha256 "c56255af9871e5752f78d06b037ce72b51ae14e520f0ff0e2c8f020b0e48e471"
   version "727a84d"
 
-  depends_on "@1.23" => :build
+  depends_on "go@1.23" => :build
 
   def install
     ENV["GOPATH"] = buildpath
