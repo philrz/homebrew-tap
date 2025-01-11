@@ -1,9 +1,9 @@
 class Super < Formula
   desc "Query and search data in files or SuperDB data lakes"
   homepage "https://superdb.org"
-  url "https://github.com/brimdata/super/archive/727a84d.zip"
-  sha256 "c56255af9871e5752f78d06b037ce72b51ae14e520f0ff0e2c8f020b0e48e471"
-  version "727a84d"
+  url "https://github.com/brimdata/super/archive/55d99d3.zip"
+  sha256 "e286e4c49f1b3069ae2112395f1165863c806afcb51087d7ae2f162b063ab48e"
+  version "55d99d3"
 
   depends_on "go@1.23" => :build
 
