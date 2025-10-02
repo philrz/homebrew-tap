@@ -4,7 +4,7 @@ cask "super" do
   desc "An analytics database that fuses structured and semi-structured data
 "
   homepage "https://github.com/brimdata/super"
-  version "4130d71"
+  version "v0.2.0"
 
   livecheck do
     skip "Auto-generated on release."
