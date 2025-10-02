@@ -15,7 +15,7 @@ cask "super" do
   on_macos do
     on_intel do
       url "https://super-prereleases.s3.us-east-2.amazonaws.com/#{version}/super-#{version}.darwin-amd64.tar.gz"
-      sha256 "9b3d3b5da7cf86c2fe657f638ff392fd2c28b9b6d371840ddd08c715c3c914bf"
+      sha256 "8075cc7943b94af42031489f42d7e6039460464c3aa58b1036fbfccc42493681"
     end
     on_arm do
       url "https://super-prereleases.s3.us-east-2.amazonaws.com/#{version}/super-#{version}.darwin-arm64.tar.gz"
