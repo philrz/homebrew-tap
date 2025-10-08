@@ -78,7 +78,7 @@ jobs:
           git config --global user.name 'Brim Automation'
           git config --global user.email 'automation@brimdata.com'
           git add Casks/super.rb
-          git commit -am "update super Homebrew Cask to ${{ steps.checkout-ref.outputs.ref }}" || true
+          git commit -am "update super Homebrew Cask to ${{ steps.current.outputs.sha }}" || true
           git push
       - name: Save current commit SHA
         if: steps.changed.outputs.changed == 'true'
