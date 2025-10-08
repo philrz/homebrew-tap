@@ -1,4 +1,4 @@
-name: "Update SuperDB Homewbrew Cask"
+name: "Update SuperDB Homebrew Cask"
 
 on:
 #  schedule:
@@ -59,16 +59,19 @@ jobs:
           workdir: super
           args: release --snapshot --clean
       - uses: aws-actions/configure-aws-credentials@v5
+        if: steps.changed.outputs.changed == 'true'
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-2
       - name: Upload artifacts to S3 bucket
+        if: steps.changed.outputs.changed == 'true'
         run: |
           sha_hash=${{ steps.current.outputs.sha }}
           short_hash=${sha_hash:0:9}
           for artifact in super/dist/super-${short_hash}*; do aws s3 cp $artifact s3://super-prereleases/${short_hash}/ ; done
       - name: Save updated Cask to Homebrew tap repo
+        if: steps.changed.outputs.changed == 'true'
         run: |
           mkdir -p Casks
           cp super/dist/homebrew/Casks/super.rb Casks
@@ -78,8 +81,10 @@ jobs:
           git commit -am "update super Homebrew Cask to ${{ steps.checkout-ref.outputs.ref }}" || true
           git push
       - name: Save current commit SHA
+        if: steps.changed.outputs.changed == 'true'
         run: echo "${{ steps.current.outputs.sha }}" > .commit-sha
       - name: Save commit SHA cache
+        if: steps.changed.outputs.changed == 'true'
         uses: actions/cache/save@v4
         with:
           path: .commit-sha
