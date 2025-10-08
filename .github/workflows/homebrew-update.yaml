@@ -12,12 +12,12 @@ jobs:
       - name: Checkout homebrew-tap
         uses: actions/checkout@v4
         with:
+          token: ${{ secrets.PAT_TOKEN }}
           fetch-depth: 0    
       - name: Checkout super
         uses: actions/checkout@v4
         with:
           repository: philrz/super
-          token: ${{ secrets.PAT_TOKEN }}
           fetch-depth: 0
           path: super
       - name: Get current super main commit SHA
