@@ -9,10 +9,12 @@ jobs:
   build-and-update:
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout homebrew-tap
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0    
-      - uses: actions/checkout@v4
+      - name: Checkout super
+        uses: actions/checkout@v4
         with:
           repository: philrz/super
           token: ${{ secrets.PAT_TOKEN }}
@@ -48,7 +50,7 @@ jobs:
       - uses: actions/setup-go@v5
         with:
           go-version-file: super/go.mod
-      - name: Build if changed
+      - name: Build new artifacts if super changed since last run
         if: steps.changed.outputs.changed == 'true'
         uses: goreleaser/goreleaser-action@v6
         with:
@@ -59,11 +61,13 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-2
-      - run: |
+      - name: Upload artifacts to S3 bucket
+        run: |
           sha_hash=${{ steps.current.outputs.sha }}
           short_hash=${sha_hash:0:9}
-          for artifact in dist/super-${short_hash}*; do aws s3 cp $artifact s3://super-prereleases/${short_hash}/ ; done
-      - run: |
+          for artifact in super/dist/super-${short_hash}*; do aws s3 cp $artifact s3://super-prereleases/${short_hash}/ ; done
+      - name: Save updated Cask to Homebrew tap repo
+        run: |
           mkdir -p Casks
           cp super/dist/homebrew/Casks/super.rb Casks
           git config --global user.name 'Brim Automation'
