@@ -39,6 +39,7 @@ jobs:
         run: |
           if [ -f .commit-sha ]; then
             PREVIOUS_SHA=$(cat .commit-sha)
+            echo "PREVIOUS_SHA is: $PREVIOUS_SHA"
             if [ "$PREVIOUS_SHA" != "${{ steps.current.outputs.sha }}" ]; then
               echo "changed=true" >> $GITHUB_OUTPUT
             else
@@ -50,6 +51,7 @@ jobs:
       - uses: actions/setup-go@v5
         with:
           go-version-file: super/go.mod
+          cache-dependency-path: super/go.sum
       - name: Build new artifacts if super changed since last run
         if: steps.changed.outputs.changed == 'true'
         uses: goreleaser/goreleaser-action@v6
