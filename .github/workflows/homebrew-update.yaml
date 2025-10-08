@@ -57,7 +57,7 @@ jobs:
         uses: goreleaser/goreleaser-action@v6
         with:
           workdir: super
-          args: release --snapshot --clean
+          args: release --config ~/super-prerelease-cask-goreleaser.yaml --snapshot --clean
       - uses: aws-actions/configure-aws-credentials@v5
         if: steps.changed.outputs.changed == 'true'
         with:
