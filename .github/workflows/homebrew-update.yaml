@@ -51,14 +51,12 @@ jobs:
         with:
           go-version-file: super/go.mod
           cache-dependency-path: super/go.sum
-      - name: Use GoReleaser config for making prerelease Casks
-        run: cp .super-prerelease-cask-goreleaser.yaml super/.goreleaser.yaml
       - name: Build new artifacts if super changed since last run
         if: steps.changed.outputs.changed == 'true'
         uses: goreleaser/goreleaser-action@v6
         with:
           workdir: super
-          args: release --snapshot --clean
+          args: release --config=${{ github.workspace }}/.super-prerelease-cask-goreleaser.yaml --snapshot --clean
       - uses: aws-actions/configure-aws-credentials@v5
         if: steps.changed.outputs.changed == 'true'
         with:
