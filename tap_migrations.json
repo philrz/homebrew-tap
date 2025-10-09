@@ -1,3 +1,10 @@
 {
-  "super": "super"
+  "formulae": [
+    {
+      "tap": "philrz/tap",
+      "old_name": "super",
+      "new_name": "super",
+      "type": "cask"
+    }
+  ]
 }
