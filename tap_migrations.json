@@ -1,3 +1,4 @@
 {
-  "super": "philrz/tap/super"
+  "super": "philrz/tap/super",
+  "type": "cask"
 }
