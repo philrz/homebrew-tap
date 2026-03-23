@@ -3,8 +3,8 @@ cask "super" do
   name "super"
   desc "An analytics database that fuses structured and semi-structured data
 "
-  homepage "https://github.com/brimdata/super"
-  version "0.1.0"
+  homepage "https://github.com/philrz/super"
+  version "0.13.0"
 
   livecheck do
     skip "Auto-generated on release."
@@ -15,22 +15,22 @@ cask "super" do
   on_macos do
     on_intel do
       url "https://github.com/philrz/super/releases/download/v#{version}/super-v#{version}.darwin-amd64.tar.gz"
-      sha256 "0adb3012a70c0f141ad2a9263efc015e67f88d1f4f07e911c2d1a4e336ed4216"
+      sha256 "f1701ebbf392844802cdb9abaa459d3ed3d5bdb08c2d999d37e4bcb51264af52"
     end
     on_arm do
       url "https://github.com/philrz/super/releases/download/v#{version}/super-v#{version}.darwin-arm64.tar.gz"
-      sha256 "78b98eeb68085b7635786d9b0d847612a665fc0ba57d9e6d532cfb49d3c3d482"
+      sha256 "d6adcdb1172da6633753c461e4c92690af89d8950c5512f52b5b619a2ca2ef75"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/philrz/super/releases/download/v#{version}/super-v#{version}.linux-amd64.tar.gz"
-      sha256 "3819e647f037c6aafcabd51dfdb6be5e030b71c1f910e3ac7ac65b5a1732d939"
+      sha256 "ee3b315d0882e8008f3856461ed26c4d0c002d3e349b2ff9fb49246eaa007b28"
     end
     on_arm do
       url "https://github.com/philrz/super/releases/download/v#{version}/super-v#{version}.linux-arm64.tar.gz"
-      sha256 "781b7a306a0ac2e9fc79481c7ba154024a024540c314830b070fbc10db978e51"
+      sha256 "dea14fb18f6e8af84c4bf7e2c7f7e998803e9c3731040e6d03543cc992516fa9"
     end
   end
 
